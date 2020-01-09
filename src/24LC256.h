@@ -1,7 +1,6 @@
 #ifndef E24LC256_H
 #define E24LC256_H
 
-//#include "Arduino.h"
 #include "Wire.h"
 
 struct E24LC256 {
