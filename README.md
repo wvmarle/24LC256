@@ -1,7 +1,11 @@
-# 24HC256
-Arduino library for the 24HC256 external I2C EEPROM.
+# 24LC256
+Arduino library for the 24LC256 external I2C EEPROM.
 
 It is designed to mimic the built-in EEPROM class as much as possible, offering the familiar put, get, read, write and update functions. However there are small differences, particularly in the initialisation of the EEPROM.
+
+This library has been tested on Arduino/ATmega328P and ESP8266. It will likely work on other Arduino compatible microcontrollers offering I2C interface.
+
+This library has been designed for and is tested on the 24LC256 EEPROM chip, it is expected to work also with other 24AA/24LC series I2C EEPROM chips, provided these chips use the same interface and I2C commands.
 
 ## Installation
 Download the zip from this site, and uncompress it in your libraries folder. 
