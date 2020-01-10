@@ -39,6 +39,6 @@ If the data structure is larger than the space between address and the size of t
 
 ### getStatus ()
 Returns an EEPROMStatus, which gets set after init() is done. This can be used to check whether the EEPROM is present and responding. Possible results:
-* UNKNOWN EEPROM not checked yet.
-* EEPROM_NOT_FOUND No EEPROM chip found on this I2C address.
-* EEPROM_FOUND EEPROM found.
+* UNKNOWN: no search done yet.
+* EEPROM_NOT_FOUND: no EEPROM chip found on this I2C address.
+* EEPROM_FOUND: an EEPROM chip was found.
