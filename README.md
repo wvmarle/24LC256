@@ -16,10 +16,12 @@ Call this once in setup() to initialise the EEPROM.
 
 ### byte read (address)
 Read a single byte from the given address and returns it.
+
 No range check is done, if address is out of range of the EEPROM size the behaviour is undefined.
 
 ### write (address, data)
 Write a single byte to the given address.
+
 No range check is done, if address is out of range of the EEPROM size the behaviour is undefined; other data may be overwritten.
 
 ### update (address, data)
@@ -27,14 +29,16 @@ Writes a byte to the given address but only if data is different from what is on
 
 ### put (address, data)
 Writes any type of variable to the EEPROM, starting at given address. Only writes if the data actually differes from what is already stored in the EEPROM. 
+
 The user must ensure the data does not extend past the size of the EEPROM, otherwise behaviour is undefined; other data may be overwritten.
 
 ### get (address, data)
 Read any type of variable from the EEPROM, starting at given address. 
+
 If the data structure is larger than the space between address and the size of the EEPROM, the data returned for the out of range part is undefined.
 
 ### getStatus ()
 Returns an EEPROMStatus, which gets set after init() is done. This can be used to check whether the EEPROM is present and responding. Possible results:
-  UNKNOWN EEPROM not checked yet.
-  EEPROM_NOT_FOUND No EEPROM chip found on this I2C address.
-  EEPROM_FOUND EEPROM found.
+* UNKNOWN EEPROM not checked yet.
+* EEPROM_NOT_FOUND No EEPROM chip found on this I2C address.
+* EEPROM_FOUND EEPROM found.
