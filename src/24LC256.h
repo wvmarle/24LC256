@@ -5,10 +5,12 @@
 
 struct E24LC256 {
 
+  public:
     enum Status {
+      UNKNOWN,
       EEPROM_NOT_FOUND,
       EEPROM_FOUND
-    } EEPROMStatus = EEPROM_NOT_FOUND;
+    } EEPROMStatus = UNKNOWN;
 
     E24LC256(uint8_t a = 0x50) {                              // Constructor - takes the I2C address of the EEPROM (default 0x50-0x57)
       I2CAddress = a;
@@ -18,6 +20,9 @@ struct E24LC256 {
       Wire.begin();
       if (ackPolling()) {                                     // See whether the EEPROM responds. We're just starting up so it should be read
         EEPROMStatus = EEPROM_FOUND;
+      }
+      else {
+        EEPROMStatus = EEPROM_NOT_FOUND;
       }
     }
 
